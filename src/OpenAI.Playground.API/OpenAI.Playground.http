@@ -1,0 +1,6 @@
+@OpenAI.Playground_HostAddress = http://localhost:5109
+
+GET {{OpenAI.Playground_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
