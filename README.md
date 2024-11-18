@@ -1,37 +1,43 @@
 # OpenAI Playground
 
-This repository is a playground to test some integration between C# and OpenAI. It uses the Azure OpenAI SDK.
+This repository serves as a playground to test the integration between C# and OpenAI. 
 
-## OpenAI SDK Integration
-
-To integrate OpenAI, we use the Azure OpenAI SDK. This SDK provides the `ChatClient` class, which enables us to interact with OpenAI's chat-based models for generating responses.
-
+To integrate OpenAI, we use the Azure OpenAI SDK. This SDK provides the `ChatClient` class, which enables seamless interaction with OpenAI's chat-based models, allowing us to generate responses.
+For more information on the Azure OpenAI SDK, refer to the official documentation:  
 [Azure OpenAI SDK Documentation](https://azuresdkdocs.blob.core.windows.net/$web/dotnet/Azure.AI.OpenAI/1.0.0-beta.8/index.html)
 
-## Basic Concepts about OpenAI
+## Prerequisites
 
-### Models
+Before you can test this project, you need to have an Azure AI Services resource set up. You can find instructions on how to create and configure it here:  
+[Get Started with Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview)
 
-The first thing to know is how to choose a model. OpenAI offers many different models. Some famous models you may have already heard about are GPT-3, GPT-3.5, and GPT-4.  
-You can find descriptions of the latest models available on Azure at the following link:
+## Sample Endpoints
 
+Once the project is up and running a Swagger UI page will be generated, where you can interact with various endpoints, similar to the one below:
+
+![Swagger Page](assets/swagger.png)
+
+Here’s a brief description of the available endpoints:
+
+- **(POST) Summarization**: Summarize text in different languages.
+- **(POST) SummarizationReview**: Summarize product or service reviews in multiple languages.
+- **(POST) AIFactory**: Create a sample "factory" using GPT, which retrieves different types of data based on user queries.
+- **(POST) SQLQuestion**: Generate a SQL query using GPT based on user input.
+
+### Basic Concepts in OpenAI
+
+#### **Models**
+
+OpenAI offers a variety of models, each suited to different tasks. Some well-known models include GPT-3, GPT-3.5, and GPT-4. These models are designed to understand and generate human-like text.
+
+You can explore the latest models available on Azure at the following link:  
 [OpenAI Models on Azure](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=python-secure%2Cglobal-standard%2Cstandard-chat-completions)
 
-### Tokens
+#### **Tokens**
 
-In OpenAI's context, a "token" is a fundamental unit of text processing used by their language models, such as GPT-3 and GPT-4.
+In the context of OpenAI, a "token" is the smallest unit of text that the model processes. Tokens can be words, parts of words, or even punctuation marks. For example, the word "ChatGPT" might be split into multiple tokens depending on the model’s configuration. Tokens are a key element in determining how much text is being processed and how long the responses can be.
 
-A token is the smallest unit of text that the model processes. Common words are typically one token, while complex or less common words may be broken into multiple tokens.
+#### **Prompts**
 
-### Prompts
+A **prompt** is the input or instruction given to the AI model to generate a response. Prompts can take various forms, such as questions, statements, or scenarios. The AI responds based on the information and context provided in the prompt, often stimulating creative or informative outputs. Effectively crafting prompts is crucial for obtaining useful and relevant results from the model.
 
-A ChatGPT prompt is an instruction or topic provided by a user to the ChatGPT AI model. It can take various forms, such as questions, statements, or scenarios, and is intended to stimulate creativity, reflection, or engagement from the AI.
-
-## Project Samples
-
-This project contains some samples:
-- Summarize a text in different languages.
-- Summarize reviews in different languages.
-- Create a sample factory using GPT that retrieves different data according to user questions.
-
-NOTE: This README is in progress.
